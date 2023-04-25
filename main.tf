@@ -41,10 +41,22 @@ module "enterprise_scale" {
   # }
 
 
+  #deploy connectivity resources
+  deploy_connectivity_resources = var.deploy_connectivity_resources
+  subscription_id_connectivity  = data.azurerm_client_config.core.subscription_id
+  configure_connectivity_resources = local.configure_connectivity_resources 
 
-  deploy_connectivity_resources    = var.deploy_connectivity_resources
-  subscription_id_connectivity     = data.azurerm_client_config.core.subscription_id
-  configure_connectivity_resources = local.configure_connectivity_resources
+  #deploy management resources
+  deploy_management_resources = var.deploy_management_resources
+  subscription_id_management  = var.subscription_id_management
+  configure_management_resources = local.configure_management_resources
+
+  #deploy identity resources
+  deploy_identity_resources = var.deploy_identity_resources
+  subscription_id_identity  = var.subscription_id_identity
+  configure_identity_resources = local.configure_identity_resources
+
+
 
   # manually associate an existing subscription to a CAF management group as defined in variable subscription_id_overrides
   subscription_id_overrides = var.subscription_id_overrides
