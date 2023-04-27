@@ -1,5 +1,5 @@
 {
-	"georestrict": {
+	"scengineering": {
 	  "policy_assignments": ["Deny-Resource-Locations", "Deny-RSG-Locations"],
 	  "policy_definitions": [],
 	  "policy_set_definitions": [],
@@ -8,20 +8,14 @@
 		"parameters": {
 		  "Deny-Resource-Locations": {
 			"listOfAllowedLocations": [
-			  "eastus",
-			  "eastus2",
-			  "westus",
-			  "northcentralus",
-			  "southcentralus"
+			  "southeastasia",
+			  "eastasia"
 			]
 		  },
 		  "Deny-RSG-Locations": {
 			"listOfAllowedLocations": [
-			  "eastus",
-			  "eastus2",
-			  "westus",
-			  "northcentralus",
-			  "southcentralus"
+			  "southeastasia",
+			  "eastasia"
 			]
 		  }
 		},

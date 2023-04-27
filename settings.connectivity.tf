@@ -7,8 +7,8 @@ locals {
           enabled = true
           config = {
             address_space                = ["10.100.0.0/16", ]
-            location                     = "eastus"
-            link_to_ddos_protection_plan = true
+            location                     = "southeastasia"
+            link_to_ddos_protection_plan = false
             dns_servers                  = []
             bgp_community                = ""
             subnets                      = []
@@ -30,7 +30,7 @@ locals {
               }
             }
             azure_firewall = {
-              enabled = true
+              enabled = false
               config = {
                 address_prefix                = "10.100.0.0/24"
                 enable_dns_proxy              = true
@@ -52,61 +52,61 @@ locals {
             enable_hub_network_mesh_peering         = false
           }
         },
-        {
-          enabled = true
-          config = {
-            address_space                = ["10.101.0.0/16", ]
-            location                     = "westus"
-            link_to_ddos_protection_plan = true
-            dns_servers                  = []
-            bgp_community                = ""
-            subnets                      = []
-            virtual_network_gateway = {
-              enabled = false
-              config = {
-                address_prefix           = "10.101.1.0/24"
-                gateway_sku_expressroute = ""
-                gateway_sku_vpn          = "VpnGw1AZ"
-                advanced_vpn_settings = {
-                  enable_bgp                       = null
-                  active_active                    = null
-                  private_ip_address_allocation    = ""
-                  default_local_network_gateway_id = ""
-                  vpn_client_configuration         = []
-                  bgp_settings                     = []
-                  custom_route                     = []
-                }
-              }
-            }
-            azure_firewall = {
-              enabled = false
-              config = {
-                address_prefix                = ""
-                enable_dns_proxy              = true
-                dns_servers                   = []
-                sku_tier                      = ""
-                base_policy_id                = ""
-                private_ip_ranges             = []
-                threat_intelligence_mode      = ""
-                threat_intelligence_allowlist = []
-                availability_zones = {
-                  zone_1 = true
-                  zone_2 = true
-                  zone_3 = true
-                }
-              }
-            }
-            spoke_virtual_network_resource_ids      = []
-            enable_outbound_virtual_network_peering = true
-            enable_hub_network_mesh_peering         = false
-          }
-        },
+        # {
+        #   enabled = true
+        #   config = {
+        #     address_space                = ["10.101.0.0/16", ]
+        #     location                     = "eastasia"
+        #     link_to_ddos_protection_plan = false
+        #     dns_servers                  = []
+        #     bgp_community                = ""
+        #     subnets                      = []
+        #     virtual_network_gateway = {
+        #       enabled = false
+        #       config = {
+        #         address_prefix           = "10.101.1.0/24"
+        #         gateway_sku_expressroute = ""
+        #         gateway_sku_vpn          = "VpnGw1AZ"
+        #         advanced_vpn_settings = {
+        #           enable_bgp                       = null
+        #           active_active                    = null
+        #           private_ip_address_allocation    = ""
+        #           default_local_network_gateway_id = ""
+        #           vpn_client_configuration         = []
+        #           bgp_settings                     = []
+        #           custom_route                     = []
+        #         }
+        #       }
+        #     }
+        #     azure_firewall = {
+        #       enabled = false
+        #       config = {
+        #         address_prefix                = ""
+        #         enable_dns_proxy              = true
+        #         dns_servers                   = []
+        #         sku_tier                      = ""
+        #         base_policy_id                = ""
+        #         private_ip_ranges             = []
+        #         threat_intelligence_mode      = ""
+        #         threat_intelligence_allowlist = []
+        #         availability_zones = {
+        #           zone_1 = true
+        #           zone_2 = true
+        #           zone_3 = true
+        #         }
+        #       }
+        #     }
+        #     spoke_virtual_network_resource_ids      = []
+        #     enable_outbound_virtual_network_peering = true
+        #     enable_hub_network_mesh_peering         = false
+        #   }
+        # },
       ]
       vwan_hub_networks = []
       ddos_protection_plan = {
-        enabled = true
+        enabled = false
         config = {
-          location = "eastus"
+          location = "southeastasia"
         }
       }
       dns = {
@@ -178,8 +178,8 @@ locals {
             storage_account_web                  = true
           }
           private_link_locations = [
-            "eastus",
-            "westus",
+            "southeastasia",
+            "eastasia",
           ]
           public_dns_zones                                       = []
           private_dns_zones                                      = []
